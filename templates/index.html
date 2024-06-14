@@ -1,0 +1,155 @@
+{% extends 'try/base.html' %}
+
+{% block content %}
+
+<h1 class="text-5xl text-blue-500" align='center'>
+	{% if request.user.is_authenticated %}
+		Hello, {{ request.user }} <br>
+	{% else %}
+		Welcome, please Login to see the Dashboard!
+	{% endif %}
+</h1>
+
+<div class="w-1/2 mt-6 px-4 py-4 mx-auto border-purple-400 rounded-xl bg-gray-200">
+
+<span class="px-3 py-6">
+<a href="{% url 'try:signup' %}">
+<button class="bg-blue-300 text-lg mb-6 px-6 py-3 rounded-2xl hover:bg-blue-500">
+	Sign Up
+</button>
+</a>
+
+{% if not request.user.is_authenticated %}
+
+</span>
+<span class="px-3 py-6">
+<a href="{% url 'try:login' %}">
+<button class="bg-teal-500 text-lg mb-6 px-6 py-3 rounded-xl hover:bg-teal-700">
+	Login
+</button>
+</a>
+</span>
+
+{% endif %}
+
+<span class="px-3 py-6">
+
+<a href="{% url 'try:logout' %}">
+<button class="bg-red-300 text-lg mb-6 px-6 py-3 rounded-xl hover:bg-red-500">
+        Logout
+</button>
+</a>
+
+</span>
+
+</div>
+<br>
+
+<br><br> <hr> <br>
+<div class="mx-auto box-border hover:box-content hover:border-4 border-2">
+	username = {{ request.user }}
+</div>
+
+<span class="mx-auto bg-gradient-to-r from-indigo-600 to-pink-500 text-transperant">
+  Hello World!
+</span>
+
+<br><br>
+
+
+<div class="w-3/5 items-center flex overflow-x-auto mx-auto h-auto bg-gray-200 rounded-xl p-2"> 
+ 	<div class="text-center text-2xl px-6">
+		<div class="w-32 h-32 mx-auto my-auto">
+			<img class="rounded-full max-w-3 max-h-3" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80" />
+		</div>
+		<div class="mt-3 text-semibold text-2xl"> Andrew </div>
+	</div>
+
+	<div class="my-auto p-2 text-center text-2xl px-6">
+		<div class="w-32 h-32 my-auto mx-auto">
+			<img class="rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80" />
+		</div>
+		<div class="mt-4"> Emily </div>
+	</div>
+
+	<div class="text-center text-2xl text-semibold px-6">
+		
+		<div class="w-32 h-32 my-auto">
+			<img class="rounded-full" src="https://images.unsplash.com/photo-1605405748313-a416a1b84491?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"  />
+		</div>
+		<div class="mt-4"> Saarah </div>
+
+	</div>
+
+	<div class="text-center text-2xl px-6">                                         <div class="w-32 h-32 mx-auto my-auto">                                         <img class="rounded-full max-w-3 max-h-3" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80" />
+                </div>
+                <div class="mt-3 text-semibold text-2xl"> Andrew </div>
+        </div>
+                                                                                <div class="my-auto p-2 text-center text-2xl px-6">                             <div class="w-32 h-32 my-auto mx-auto">                                         <img class="rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80" />
+                </div>
+                <div class="mt-4"> Emily </div>
+        </div>
+
+        <div class="text-center text-2xl text-semibold px-6">
+                <div class="w-32 h-32 my-auto">
+                        <img class="rounded-full" src="https://images.unsplash.com/photo-1605405748313-a416a1b84491?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"  />
+                </div>
+                <div class="mt-4"> Saarah </div>
+
+        </div>
+
+</div>
+
+<br><hr><br>
+
+
+<div class="overflow-visible bg-gradient-to-r from-pink-500 to-indigo-400 rounded-xl mx-auto flex items-center w-48 h-20"> 
+	<div class="w-32"> <img src="https://images.unsplash.com/photo-1605405748313-a416a1b84491?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80" class="rounded-full -ml-8 shadow-2xl" id="image" /> </div>
+	<div class="justify-left">
+		<p class="text-bold text-xl">Sarah</p>
+		<p class="text-xs text-slate-200">Assistant</p>
+	</div>
+</div>
+
+<br><br>
+
+<div id="string" class="mx-auto bg-gray-100">
+	<svg class="overflow-visible" width="500" height="250">
+		<path d="M 90 125 Q 250 125 900 125" stroke="black" stroke-width="6" fill="transparent" class="rounded-2xl shadow-xl">
+	</svg>
+</div>
+
+<div class="m-12 p-6 bg-gray-200 mx-auto items-center h-48 w-1/2">
+	<svg height="210" width="500">  
+  <polygon points="100,10 40,198 190,78" />  
+</svg>  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script> 
+	var init = "M 90 125 Q 250 125 900 125";
+	var fl = "M 90 125 Q 250 125 900 125";
+	
+	var str = document.querySelector('#string');
+
+	str.addEventListener("mousemove", (args) => {
+		path = `M 90 125 Q ${args.x} ${args.y} 900 125"`;
+
+		gsap.to("svg path",{
+			attr: { d:path },
+			duration:0.2,
+			ease:"power3.out"
+		})
+	})
+
+	str.addEventListener("mouseleave", (args) => {
+		gsap.to("svg path",{
+			attr: { d:fl },
+			duration:1.1,
+			ease:"elastic.out(1,0.2)"
+		})
+	})
+
+</script>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "try/base.html" %}
+
+{% block morehead %}
+<style>
+
+#pageb {
+	width: 100%;
+	height: 1280px;
+	overflow-x: auto;
+}
+
+#pageb h1 {
+	font-size: 600px;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="bg-gray-100 border border-b-2 border-black-900">
+<div class="p-3 m-2 box-shadow-xl px-10 flex items-center justify-between position-sticky" id="out">
+	<div class="text-5xl text-bold" id="nav">
+		Cropto<span class="text-pink-500">Knight</span>
+	</div>
+	<div class="flex gap-6 text-semibold text-xl overflow-visibsle">
+		<nav class="space-x-6 overflow-visible">
+			<a>Home</a>
+			<a>Contact</a>
+			<a>Classes</a>
+			<a>About</a>
+		</nav>
+	</div>
+</div>
+</section>
+
+<section class="bg-gray-200 flex items-center" id="pageb">
+		<h1>PrathameshPradeepKhade</h1>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	var tl = gsap.timeline()
+	tl.from("#out #nav", {
+		y:200,
+		duration:1,
+		opacity:0,
+		stagger:0.5
+	})
+
+	tl.from("#out a", {
+		x:200,
+		duration:1,
+		opacity:0,
+		stagger:0.5,
+		delay:1
+	})
+
+	gsap.to("#pageb h1", {
+		transform:"translateX(-130%)",
+		scrollTrigger:{
+			trigger:"#pageb",
+			scroller:"body",
+			markers:"true",
+			scrub:2,
+			pin:true,
+			start:"top 0%",
+			end:"top -100%"
+		}
+	})		
+</script>
+
+{% endblock %}
